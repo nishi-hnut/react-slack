@@ -1,10 +1,21 @@
 import { atom, useAtom } from "jotai";
 
-export const showCreateWorkspaceModalAtom = atom(false);
+const showCreateWorkspaceModalAtom = atom(false);
+const showCreateChannelModalAtom = atom(false);
 
 export const useUiStore = () => {
   const [showCreateWorkspaceModal, setShowCreateWorkspaceModal] = useAtom(
     showCreateWorkspaceModalAtom
   );
-  return { showCreateWorkspaceModal, setShowCreateWorkspaceModal };
+
+  const [showCreateChannelModal, setShowCreateChannelModal] = useAtom(
+    showCreateChannelModalAtom
+  );
+
+  return {
+    showCreateWorkspaceModal,
+    setShowCreateWorkspaceModal,
+    showCreateChannelModal,
+    setShowCreateChannelModal,
+  };
 };

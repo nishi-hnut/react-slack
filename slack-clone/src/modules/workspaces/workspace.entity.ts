@@ -7,5 +7,6 @@ export class Workspace {
 
   constructor(props: Workspace) {
     Object.assign(this, props);
+    this.channels = props.channels.map((channel) => new Channel(channel));
   }
 }
